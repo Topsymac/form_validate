@@ -8,19 +8,35 @@ function App() {
 
   const handleSubmit =(e)=>{
     e.preventDefault();
-    if (name === "" ) {
-      alert('Name is required')
-    } 
-    if (email === ""){
-      alert('Email is required')
-    }
-    if (password === "") {
-      alert('Password is required')
-    }
-    return;
-    // if (name === "" || email === "" || password === ""){
-    //   alert("Enter your details correctly")
+    // if (name === "" ) {
+    //   alert('Name is required')
+    // } 
+    // if (email === ""){
+    //   alert('Email is required')
     // }
+    // if (password === "") {
+    //   alert('Password is required')
+    // }
+    // return;
+    if (name === "" || email === "" || password === ""){
+      const emptyFields = [];
+      if (name === "") {
+        emptyFields.push("Name");
+      }
+      if (email === "") {
+        emptyFields.push("Email");
+      }
+      if (password === "") {
+        emptyFields.push("Password");
+      }
+      const emptyFieldsMessage = emptyFields.join(", ");
+
+      alert(
+        `${emptyFieldsMessage} is required.`
+      );
+    } else{ 
+      alert ('Form Submitted Successfully')
+    }
   }
   return (
     <div className="App">
