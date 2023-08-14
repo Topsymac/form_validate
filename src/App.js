@@ -32,7 +32,9 @@ function App() {
       const emptyFieldsMessage = emptyFields.join(", ");
 
       alert(
-        `${emptyFieldsMessage} is required.`
+        `${emptyFieldsMessage} ${
+          emptyFields.length > 1 ? "are" : "is"
+        } required.`
       );
     } else{ 
       alert ('Form Submitted Successfully')
